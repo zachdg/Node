@@ -66,11 +66,11 @@ var getExchange = (countryCode) => {
     });
 };
 
-app.use((request, response, next) => {
-    response.render('maintenance.hbs', {
-
-    })
-});
+// app.use((request, response, next) => {
+//     response.render('maintenance.hbs', {
+//
+//     })
+// });
 
 
 app.use((request, response, next) => {
@@ -107,7 +107,7 @@ app.get('/exchange', (request, response) => {
     //     title: "Exchange page",
     //     header: "Welcome to the exchange page"
     //     });
-    country = 'Canada';
+    country = 'Mexico';
     getCountry(country).then((results) => {
         code = results.currencyCode;
         return getExchange(results.currencyCode);
