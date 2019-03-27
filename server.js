@@ -3,6 +3,8 @@ const request = require('request');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 8080;
+
 var app = express();
 
 app.use(express.static(__dirname + 'public'));
@@ -66,7 +68,7 @@ var getExchange = (countryCode) => {
 
 app.use((request, response, next) => {
     response.render('maintenance.hbs', {
-        
+
     })
 });
 
@@ -132,6 +134,6 @@ app.get('/exchange', (request, response) => {
 //     })
 // });
 
-app.listen(8080, () => {
-    console.log('Server is up')
+app.listen(port, () => {
+    console.log(`Server is up on the port ${port}`)
 });
